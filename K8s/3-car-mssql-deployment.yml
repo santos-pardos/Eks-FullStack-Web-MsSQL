@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: car-sql-svc
+  name: sql-server2022
   labels:
     app: car-sql
 spec:
@@ -9,13 +9,12 @@ spec:
     - port: 1433
   selector:
     app: car-sql
-    tier: mssql
-  clusterIP: None
+  type: LoadBalancer
 ---
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: car-sql-deploy
+  name: sql-server2022
   labels:
     app: car-sql
 spec:
