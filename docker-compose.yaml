@@ -8,12 +8,12 @@ services:
     environment:
       - ACCEPT_EULA=y
       - SA_PASSWORD=A&VeryComplex123Password
-  api:
+  web:
     build: ./FrontEnd/
     container_name: car-web
     ports: 
       - "80:80"
-  web:
+  api:
     build: ./BackEnd/
     container_name: car-api
     ports: 
