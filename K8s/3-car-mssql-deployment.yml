@@ -35,7 +35,7 @@ spec:
         fsGroup: 1000
       containers:
       - name: car-sql
-        image: santospardos/sanvalero:car-sql2022
+        image: santospardos/sanvalero:car-sql2022b
         env:
         - name: MSSQL_PID
           value: "Express"
