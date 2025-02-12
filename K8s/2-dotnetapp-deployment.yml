@@ -1,38 +1,38 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: dotnetapp
+  name: car-web
   labels:
-    app: dotnetapp
+    app: car-web
 spec:
   ports:
     - port: 80
   selector:
-    app: dotnetapp
+    app: car-web
     tier: frontend
   type: LoadBalancer
 ---
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: dotnetapp
+  name: car-web
   labels:
-    app: dotnetapp
+    app: car-web
 spec:
   selector:
     matchLabels:
-      app: dotnetapp
+      app: car-web
       tier: frontend
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: dotnetapp
+        app: car-web
         tier: frontend
     spec:
       containers:
-      - name: dotnet-core-and-mssql-app
-        image: santospardos/unir:webapisql-docker-api
+      - name: car-web
+        image: santospardos/sanvalero:car-web
         ports:
         - containerPort: 80
