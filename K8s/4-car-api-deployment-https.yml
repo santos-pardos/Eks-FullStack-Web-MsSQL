@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: car-api
+  name: car-api-svc
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
     service.beta.kubernetes.io/aws-load-balancer-ssl-cert: <ARN of your certificate from the aws create certicate command>
@@ -22,7 +22,7 @@ spec:
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: car-api
+  name: car-api-deploy
   labels:
     app: car-api
 spec:
