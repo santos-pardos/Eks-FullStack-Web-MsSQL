@@ -36,7 +36,7 @@ spec:
         fsGroup: 1000
       containers:
       - name: dotnet-core-and-mssql-db
-        image: santospardos/sanvalero:mssql-2022
+        image: santospardos/sanvalero:car-sql2022
         env:
         - name: MSSQL_PID
           value: "Express"
