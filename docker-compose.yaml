@@ -8,10 +8,10 @@ services:
     ports:
       - "1433:1433"
   api:
-    build: ./FrontEnd/Dockerfile
+    build: ./FrontEnd/
     ports: 
       - "8080:80"
   web:
-    build: ./BackEnd/Dockerfile
+    build: ./BackEnd/
     ports: 
       - "80:80"
