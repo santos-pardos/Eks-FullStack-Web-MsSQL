@@ -2,7 +2,7 @@ version: '3'
 services:
   sql:
     image: "mcr.microsoft.com/mssql/server:2022-latest"
-    container_name: sql-server2022
+    container_name: car-sql2022
     ports: # not actually needed, because the two services are on the same network.
       - "1433:1433" 
     environment:
@@ -10,11 +10,11 @@ services:
       - SA_PASSWORD=A&VeryComplex123Password
   api:
     build: ./FrontEnd/
-    container_name: web
+    container_name: car-web
     ports: 
       - "80:80"
   web:
     build: ./BackEnd/
-    container_name: api
+    container_name: car-api
     ports: 
       - "5000:80"
