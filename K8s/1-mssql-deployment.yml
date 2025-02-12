@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: sql-server
   labels:
-    app: dotnetapp
+    app: car-web-sql
 spec:
   ports:
     - port: 1433
   selector:
-    app: dotnetapp
+    app: car-web-sql
     tier: mssql
   clusterIP: None
 ---
@@ -17,25 +17,25 @@ kind: Deployment
 metadata:
   name: db
   labels:
-    app: dotnetapp
+    app: car-web-sql
 spec:
   selector:
     matchLabels:
-      app: dotnetapp
+      app: car-web-sql
       tier: mssql
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: dotnetapp
+        app: car-web-sql
         tier: mssql
     spec:
       terminationGracePeriodSeconds: 10
       securityContext:
         fsGroup: 1000
       containers:
-      - name: dotnet-core-and-mssql-db
+      - name: car-web-sql
         image: santospardos/sanvalero:car-sql2022
         env:
         - name: MSSQL_PID
