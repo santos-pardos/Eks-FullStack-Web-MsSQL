@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: car-api
+  labels:
+    app: car-api
+spec:
+  ports:
+    - port: 5000
+  selector:
+    app: car-api
+    tier: backend
+  type: LoadBalancer
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: car-api
+  labels:
+    app: car-api
+spec:
+  selector:
+    matchLabels:
+      app: car-api
+      tier: backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: car-api
+        tier: backend
+    spec:
+      containers:
+      - name: car-api
+        image: santospardos/sanvalero:car-api
+        ports:
+        - containerPort: 80
