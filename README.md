@@ -9,3 +9,14 @@ DBeaver Community 24.3.4  (Portable: Zip file)
 ```
 https://dbeaver.io/download/
 ```
+
+## Tools
+```
+docker run --name cloudbeaver --rm -ti -d -p 8080:8978 -v /opt/cloudbeaver/workspace dbeaver/cloudbeaver:latest
+```
+```
+docker run -it  nicolaka/netshoot sh
+```
+```
+kubectl run tmp-shell --rm -i --tty --image nicolaka/netshoot
+```
