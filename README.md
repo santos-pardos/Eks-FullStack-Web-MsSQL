@@ -1,6 +1,6 @@
 ## EKS + App + API + MsSQL  (Docker)
 
-## Install Docker and Docker-Compose
+## Install Docker and Docker-Compose - Ubuntu
 ```
 # Add Docker's official GPG key:
 sudo apt-get update
@@ -28,8 +28,16 @@ docker-compose --version
 sudo groupadd docker
 newgrp docker
 sudo apt install docker-compose -y
-
+sudo apt install git -y
+sudo apt install unzip -y
 ```
+## AWS CLI
+```
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+```
+
 
 ### 
 SQL Server Management Studio (SSMS)
