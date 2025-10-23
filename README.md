@@ -31,6 +31,15 @@ sudo apt install docker-compose -y
 sudo apt install git -y
 sudo apt install unzip -y
 ```
+```
+docker-compose build --no-cache --pull
+docker-compose up -d
+docker-compose down
+docker rmi $(docker images -q)
+```
+
+
+
 ## AWS CLI
 ```
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
