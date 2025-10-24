@@ -27,7 +27,7 @@ docker-compose --version
 
 ```
 sudo groupadd docker
-newgrp docker
+sudo newgrp docker
 sudo apt install docker-compose -y
 sudo apt install git -y
 sudo apt install unzip -y
