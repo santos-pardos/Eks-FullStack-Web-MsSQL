@@ -31,6 +31,8 @@ sudo apt install docker-compose -y
 sudo apt install git -y
 sudo apt install unzip -y
 ```
+
+## Docker commands
 ```
 docker-compose build --no-cache --pull
 docker-compose up -d
