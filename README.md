@@ -26,8 +26,8 @@ docker-compose --version
 ```
 
 ```
-sudo groupadd docker
-sudo newgrp docker
+sudo usermod -aG docker $USER
+(salir y entrar de ssh)
 sudo apt install git -y
 sudo apt install unzip -y
 ```
